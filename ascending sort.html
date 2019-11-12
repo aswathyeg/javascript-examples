@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<h1>Numeric sort</h1>
+<p id="demo"></p>
+<button onclick="myfunction()">Try it</button>
+<body>
+<script>
+var nums=[400,10,56,98908];
+document.getElementById("demo").innerHTML=nums;
+
+function myfunction(){
+nums.sort(function(a,b){return a-b});
+document.getElementById("demo").innerHTML=nums;
+
+}
+</script>
+</body>
+</html>
