@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Array sorting</h1>
+<p>The smallest number is <span id="demo"></span></p>
+<script>
+var nums=[7853,2,923,44,90000];
+document.getElementById("demo").innerHTML=nums;
+nums.sort(function(a,b){return a-b});
+document.getElementById("demo").innerHTML=nums[0];
+</script>
+
+</body>
+</html>
