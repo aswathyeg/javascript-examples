@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Array sorting</h1>
+<p>Arrange array in descending order</p>
+<button onclick="myfunction()">Try it</button>
+<p id="demo">
+</p>
+<script>
+var points=[254,78359,12,903,1];
+document.getElementById("demo").innerHTML=points;
+function myfunction(){
+points.sort(function(a,b){return b-a});
+document.getElementById("demo").innerHTML=points;
+}
+</script>
+</body>
+</html>
