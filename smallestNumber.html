@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<button onclick="arrange()">Tri it</button>
+
+<script>
+var nums=[2435,467657,12,90];
+document.getElementById("demo").innerHTML=nums;
+ function arrange(){
+nums.sort(function(a,b){return a-b});
+document.getElementById("demo").innerHTML=nums[0];
+ }
+</script>
+</body>
+</html>
