@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="demo"></p>
+<script>
+class Car{
+    constructor(brand){
+        this.carname=brand;
+    }
+    static hello(){
+return"Hello!";
+    }
+}
+mycar=new Car("ford");
+document.getElementById("demo").innerHTML=Car.hello();
+</script>
