@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+class car{
+    constructor(brand){
+        this.carname=brand;
+        
+    }
+    present(){
+        return "I have a "+this.carname;
+    }
+}
+mycar=new car("Ecosport");
+document.getElementById("demo").innerHTML=mycar.present();
+        </script>
+    </body>
+</html>
