@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+ <html>
+<body>
+<p id="demo"></p>
+Enter Any Number:<input id="number"></br></br>
+<button onclick="check()">Check it</button>
+    <script>
+     function check(){
+
+        var x;
+        x=document.getElementById("number").value;
+        if(x%2==0){
+            return document.getElementById("demo").innerHTML="Even number";
+        }
+        else
+        return document.getElementById("demo").innerHTML="Odd number";
+     }
+        
+        </script>
+</body>
+
+</html>
