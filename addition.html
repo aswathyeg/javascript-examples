@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <body>
+            A:<input id="a"><br><br>
+    
+            
+            B:<input id="b"><br><br>
+
+
+            <button onClick="add()">
+            Result
+            </button><br><br>
+            A+B= <input id="c">
+<script>
+    function add(){
+        var a,b,c;
+        a=Number(document.getElementById('a').value);
+        b=Number(document.getElementById('b').value);
+        c=a+b;
+        document.getElementById('c').value=c;
+    }
+</script>
+
+        </body>
+
+    </head>
+</html>
