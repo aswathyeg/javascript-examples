@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <p id="demo"></p>
+            <script>
+                function displayer(some){
+                    document.getElementById("demo").innerHTML=some;
+                }
+function add(num1,num2,myCallback){
+    let sum=num1+num2;
+    displayer(sum);
+
+}
+add(1,2,displayer);
+            </script>
+        </body>
+    </head>
+</html>
