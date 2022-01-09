@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        <script>
+            const aswathy={
+                firstName:'Aswathy',
+                lastName:'Eg',
+                birthYear:1986,
+                job:'freelancer',
+                hasDriversLicense:'true',
+
+                calcAge:function(){
+                this.age=2022-this.birthYear;
+                return this.age;
+            },
+            getSummery:function(){
+                return(`${this.firstName} is a ${this.calcAge()} year old ${this.job} and she has ${this.hasDriversLicense? 'a':'no'} drivers license`  )
+
+            }
+            }
+            console.log(aswathy.getSummery())
+
+            
+        </script>
+    </body>
+</head>
