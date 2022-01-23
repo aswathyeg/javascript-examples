@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Category{
+                constructor(){
+                    this.gender='Female';
+                }
+                printGender(){
+                    console.log(this.gender);
+                }
+            }
+            class Students extends Category{
+                constructor(){
+                    super();//must for accessing properties/functions from superclass
+                    this.name='asha';
+                }
+                printName() {
+                    console.log(this.name);
+                    
+                } 
+
+            }
+            const students= new Students();
+            students.printName();
+            students.printGender();
+        </script>
+    </body>
+</html>
