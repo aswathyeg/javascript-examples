@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        <script>
+           function checkMiddleSeat(seat){
+               const s=seat.slice(-1);
+               if(s=='B'||s=='E')console.log ('you got the middle seat');
+               else console.log('you are lucky');
+               
+           }
+           checkMiddleSeat('234B');
+           checkMiddleSeat('2C3');
+           checkMiddleSeat('234E');
+//practice
+function checkBag(items){
+    const baggage=items.toLowerCase();
+    if (baggage.includes('knife')|| baggage.includes('pets'))
+    console.log('you are not allowed to travell' )
+    else console.log('Happy journey')
+
+}
+checkBag('bag,camera,knife');
+checkBag('cot,note,pets');
+checkBag('bag,groceries');
+
+//capitalize
+const name='harsha';
+console.log(name.slice(1));
+//console.log((name[0].toUpperCase ())+(name.slice(1)))
+console.log(name.replace(name[0],name[0].toUpperCase()));
+
+//padding
+console.log(name.padstart(10,'+'));
+
+        </script>
+        </body>
+</head>
