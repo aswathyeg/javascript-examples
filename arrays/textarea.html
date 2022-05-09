@@ -24,6 +24,17 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 });
+//working with strings
+function capitalizeName(name){
+    const names = name.split(' ');
+    let upperCase = [];
+    for(const n of names){
+        upperCase.push(n[0].toUpperCase() +n.slice(1)) //slice(1) returns all letters from position 1 onwards
+    }
+    console.log(upperCase.join(' '));
+}
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
             </script>
         </body>
     </head>
