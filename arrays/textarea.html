@@ -81,8 +81,8 @@ for (const days of properties){
 }
 
  console.log (openStr);
- //coding challange
 
+ //coding challange
  const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -123,6 +123,17 @@ for (const days of properties){
     team2: 6.5,
   },
 };
+//1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+const gameProperties= Object.values(game.scored);
+console.log(gameProperties);
+
+
+for(const [i,scores] of game.scored.entries()){
+  console.log(`Goal ${i+1}:${scores}`);
+}
+//Use a loop to calculate the average odd and log it to the console 
+
+
 
             </script>
         </body>
