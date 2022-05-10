@@ -57,7 +57,7 @@ const nested = [2, 4, [5, 6]];
  ({a,b}=obj);
  console.log (a,b); //34,78
  
- //
+ // Object.keys/Object.values/Object.entries
  const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: { //key of obj openingHours
@@ -75,7 +75,54 @@ const openingHours = {
 };
 const properties = Object.keys(openingHours);
 console.log(properties);
- 
+let openStr = `We are open on ${properties.length} days:`;
+for (const days of properties){
+  openStr+=`${days},`;
+}
+
+ console.log (openStr);
+ //coding challange
+
+ const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
             </script>
         </body>
