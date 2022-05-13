@@ -173,7 +173,23 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+//functions
+function oneWord(str){
+  return str.replace(/ /g,'').toLowerCase();
 
+}
+function upperFirstWord(str){
+  const [first,...others]= str.split('');
+return [first.toUpperCase(),...others].join(' ');
+
+}
+function transformer (str,fn){
+  console.log(`original string:${str}`);
+  console.log(`transformed string:${fn(str)}`);
+  console.log(`transformed by :${fn.name}`);
+
+}
+transformer ('JavaScript is the best!',upperFirstWord);// upperFirstWord is the callback function
 
 
             </script>
