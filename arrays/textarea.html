@@ -1,5 +1,5 @@
 
-use 'strict';
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -179,7 +179,7 @@ function oneWord(str){
 
 }
 function upperFirstWord(str){
-  const [first,...others]= str.split('');
+  const [first,...others]= str.split(' ');
 return [first.toUpperCase(),...others].join(' ');
 
 }
@@ -190,6 +190,19 @@ function transformer (str,fn){
 
 }
 transformer ('JavaScript is the best!',upperFirstWord);// upperFirstWord is the callback function
+//another eg for callback function
+function upperLastword (string){
+  const last =string.split(' ').pop();
+  return[ string.slice(0)+last.toUpperCase()].join(' ');//have to replace last word of string with 'last'
+
+}
+function transformers (str,fn){
+  console.log(`original string: ${str}`);
+  console.log(`tranformed string :${fn(str)}`);
+  console.log(`transformed by${fn.name}`);
+
+}
+transformers ('my name is aswathy',upperLastword);
 
 
             </script>
