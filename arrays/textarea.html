@@ -203,7 +203,47 @@ function transformers (str,fn){
 transformers ('my name is aswathy',upperLastword);
 
    //call and apply methods
+   const lufthansa={
+     airline:'Lufthansa',
+     iataCode:'LH',
+     bookings:[],
+
+     book(flightNum,name){
+       console.log(
+         `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`//using this keyword so that same object can be used at differnt places
+       );
+       this.bookings.push({flight:`${this.iataCode} ${flightNum} name`})
+     }
    
+   
+   }
+   lufthansa.book(23,'John Smith');
+
+   const eurowings={
+    airline:'Eurowings',
+     iataCode:'EW',
+     bookings:[],
+     
+
+   }
+   const airIndia={
+    airline:'AirIndia',
+     iataCode:'AI',
+     bookings:[],
+     
+
+   }
+   //for reuse book method
+   const book=lufthansa.book;
+   book.call(lufthansa,24,'Mary');
+   book.call(eurowings,25,'Mathew');
+
+   //apply method
+   const forApply=[26,'Cooper'];
+
+   book.apply(lufthansa,forApply);  
+   book.call(lufthansa,...forApply);//call can be do like this as well
+  
    
    </script>
         </body>
