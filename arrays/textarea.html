@@ -235,6 +235,7 @@ transformers ('my name is aswathy',upperLastword);
    }
    //for reuse book method
    const book=lufthansa.book;
+
    book.call(lufthansa,24,'Mary');
    book.call(eurowings,25,'Mathew');
 
@@ -243,7 +244,21 @@ transformers ('my name is aswathy',upperLastword);
 
    book.apply(lufthansa,forApply);  
    book.call(lufthansa,...forApply);//call can be do like this as well
+  //bind method
+  const bookLH=book.bind(lufthansa);
+  const bookEW=book.bind(eurowings);
+  const bookAI=book.bind(airIndia);
+  bookLH(1,'Aswathy');
+  const bookLH2=book.bind(lufthansa,23);
+  bookLH2('John');
   
+  //challange
+
+  const poll={
+    question:'What is your favorate programming language?',
+    options:['0:JavaScript','1:Python','2:Rust','3:C++'],
+    answers:new Array(4).fill(0),
+  }
    
    </script>
         </body>
