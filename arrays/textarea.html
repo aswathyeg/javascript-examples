@@ -251,14 +251,22 @@ transformers ('my name is aswathy',upperLastword);
   bookLH(1,'Aswathy');
   const bookLH2=book.bind(lufthansa,23);
   bookLH2('John');
-  
+
   //challange
 
   const poll={
     question:'What is your favorate programming language?',
     options:['0:JavaScript','1:Python','2:Rust','3:C++'],
-    answers:new Array(4).fill(0),
+    answers:new Array(4).fill(0),//will generate[0,0,0,0]
+
+    registerNewAnswer (){
+      const answer=Number(`${this.question}\n${this.options.join('\n')}\n(write option number)`);
+      console.log(answer);
+      
+
+    }
   }
+  
    
    </script>
         </body>
