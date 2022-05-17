@@ -260,12 +260,19 @@ transformers ('my name is aswathy',upperLastword);
     answers:new Array(4).fill(0),//will generate[0,0,0,0]
 
     registerNewAnswer (){
-      const answer=Number(`${this.question}\n${this.options.join('\n')}\n(write option number)`);
+      const answer=Number(prompt(`${this.question}\n${this.options.join('\n')}\n(write option number)`));
       console.log(answer);
-      
+//register answer
+typeof answer==='number' && answer<this.answers.length && this.answers[answer]++;
+console(this.answers)
 
     }
+    
   }
+  
+  poll.registerNewAnswer();
+  document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
+
   
    
    </script>
