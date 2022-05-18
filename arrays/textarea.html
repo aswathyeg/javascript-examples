@@ -270,11 +270,13 @@ console(this.answers)
     
   }
   
-  poll.registerNewAnswer();
-  document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
+  // poll.registerNewAnswer();
+  // document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
 
-  
-   
+   //array destructuring
+   const numbers=[1,2,3];
+   [num1,num2]=numbers;
+   console.log(num1,num2);
    </script>
         </body>
     </head>
