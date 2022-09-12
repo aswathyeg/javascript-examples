@@ -4,10 +4,17 @@
 <h1>Array sorting</h1>
 <p>The smallest number is <span id="demo"></span></p>
 <script>
-var nums=[7853,2,923,44,90000];
-document.getElementById("demo").innerHTML=nums;
-nums.sort(function(a,b){return a-b});
-document.getElementById("demo").innerHTML=nums[0];
+// var nums=[7853,2,923,44,90000];
+// document.getElementById("demo").innerHTML=nums;
+// nums.sort(function(a,b){return a-b});
+// document.getElementById("demo").innerHTML=nums[0];
+var numArray = [1,0,87,8249,34];
+document.getElementById("demo").innerHTML=numArray;
+numArray.sort(
+    function(a,b){
+        return (a-b)
+        })
+        document.getElementById("demo").innerHTML=numArray[0];
 </script>
 
 </body>
