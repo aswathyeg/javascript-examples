@@ -28,6 +28,7 @@ function mapping() {
   console.log(multiply);
 }
 mapping();
+
 //filter
 var a = [1, 2, 3, 4];
 function fil() {
@@ -37,3 +38,10 @@ function fil() {
   console.log(reduceArray);
 }
 fil();
+
+//reduce
+var num = [1, 2, 3, 4];
+var sum = num.reduce((acc, curr, i, arr) => {
+  return acc + curr;
+}, 0);
+console.log(sum);
