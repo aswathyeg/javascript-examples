@@ -87,3 +87,10 @@ const forEachResult2 = numberArr.forEach((ar, i) => {
   numberArr[i] = ar + 3;
 });
 console.log(numberArr);
+//null vs undefined
+
+var y;
+console.log(y); //undefined->not initialised
+//console.log(notDefinedValue); //not defined
+var y = null;
+console.log(y);
