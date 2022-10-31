@@ -73,3 +73,17 @@ function multiplys(num, num) {
 }
 var arr = [5, 5];
 multiplys(...arr);
+//map vs forEach (both used for array operations)
+const numberArr = [2, 5, 6, 3, 4];
+const mapResult = numberArr.map((arr) => {
+  return arr * 2;
+});
+console.log(mapResult); //will result a new array. can append other array mathods like filter
+const forEachResult = numberArr.forEach((ar) => {
+  return ar + 3;
+});
+console.log(forEachResult); //will not result a new array. cannot append other array mathods like filter
+const forEachResult2 = numberArr.forEach((ar, i) => {
+  numberArr[i] = ar + 3;
+});
+console.log(numberArr);
