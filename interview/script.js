@@ -3,7 +3,7 @@
 function test() {
   let a = "hello";
   if (true) {
-    let a = "hi";
+    const a = "hi";
     console.log(a);
   }
 
@@ -45,3 +45,31 @@ var sum = num.reduce((acc, curr, i, arr) => {
   return acc + curr;
 }, 0);
 console.log(sum);
+
+//firstclass functions
+function square(num) {
+  return num * num;
+}
+function result(fn) {
+  console.log(`squre is` + fn(5));
+}
+result(square);
+//function scope
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 1000);
+// }
+//function hoisting
+var x = 5;
+var fun = function () {
+  console.log(x);
+  var x = 3;
+};
+fun();
+//arguments vs params
+function multiplys(num, num) {
+  console.log(num * num);
+}
+var arr = [5, 5];
+multiplys(...arr);
