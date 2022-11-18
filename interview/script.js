@@ -94,3 +94,101 @@ console.log(y); //undefined->not initialised
 //console.log(notDefinedValue); //not defined
 var y = null;
 console.log(y);
+
+//flatten the array
+let arr2 = [
+  [1, 2],
+  [3, 4],
+  [4, 6, [7, 8]],
+  [9, 10],
+];
+let flattened1 = [].concat(...arr2);
+let flattened2 = arr2.flat(2);
+console.log(flattened2);
+//custom flatten function
+function customFlat(arr2, depth = 1) {
+  let resultArray = [];
+  arr2.forEach((arr2) => {
+    if (Array.isArray(arr2) && depth > 0) {
+      resultArray.push(...customFlat(arr2, depth - 1));
+    } else resultArray.push(arr2);
+  });
+  return resultArray;
+}
+console.log(customFlat(arr2, 2));
+//call apply and bind
+var person = {
+  name: "javascript",
+  hello: function (thing) {
+    console.log(this.name + " " + "says hello" + thing);
+  },
+};
+//person.hello("world");
+var alterName = { name: "Aswathy" };
+person.hello.call(alterName, "world");
+person.hello.apply(alterName, ["world"]);
+var bindResult = person.hello.bind(alterName);
+bindResult("world");
+
+//infinite currying
+function add(a) {
+  return function (b) {
+    if (b) return add(a + b);
+    return a;
+  };
+}
+console.log(add(5)(2)(4)(8)());
+//implement this code
+const calc = {
+  total: 0,
+  add(a) {
+    this.total += a;
+    return this;
+  },
+  multiply(a) {
+    this.total *= a;
+    return this;
+  },
+  subtract(a) {
+    this.total -= a;
+    return this;
+  },
+};
+const results = calc.add(10).multiply(5).subtract(30).add(10);
+console.log(results.total);
+//
+const persons = {
+  name: "aswathy",
+  dob: "26-05-1986",
+  age: "36",
+};
+const pers = { ...persons };
+console.log(pers);
+const persons2 = {
+  ...persons,
+  name: "dipa",
+};
+const pers2 = { ...persons2 };
+console.log(pers2);
+//
+const people = {
+  name: ["aswathy", "nitha"],
+  age: [9, 8],
+};
+const people1 = { ...people };
+console.log(people1);
+//filter
+let nameList = ["pedro", "asea", "pedro", "toto", "lulu"];
+const newNameList = nameList.filter((c) => {
+  return c !== "pedro";
+});
+console.log(newNameList);
+//closures
+function outerFunction() {
+  outerVariable = "outerVariable";
+  function innerFunction() {
+    console.log(outerVariable); //can access outerscope variable
+  }
+  return innerFunction();
+}
+outerFunction();
