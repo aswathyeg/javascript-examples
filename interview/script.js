@@ -185,10 +185,21 @@ const newNameList = nameList.filter((c) => {
 console.log(newNameList);
 //closures
 function outerFunction() {
-  outerVariable = "outerVariable";
+  let outerVariable = "outerVariable";
   function innerFunction() {
     console.log(outerVariable); //can access outerscope variable
   }
   return innerFunction();
 }
 outerFunction();
+//
+function outerFunction2(inner) {
+  let outerVariable2 = inner;
+  function innerFunction2() {
+    setTimeout(() => {
+      console.log(`${inner}`);
+    }, 1000);
+  }
+  return innerFunction2();
+}
+outerFunction2("outer2");
