@@ -203,7 +203,7 @@ function outerFunction2(inner) {
   return innerFunction2();
 }
 outerFunction2("outer2");
-//Asynchronous js.async and await
+//Asynchronous js.promises
 const event = new Promise((resolve, reject) => {
   var name = "hon";
   if (name == "john") {
@@ -222,3 +222,4 @@ event
   .finally(() => {
     console.log("promise ended");
   });
+//async and await
