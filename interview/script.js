@@ -203,3 +203,12 @@ function outerFunction2(inner) {
   return innerFunction2();
 }
 outerFunction2("outer2");
+//Asynchronous js.async and await
+const event = Promise((resolve, reject) => {
+  var name = "john";
+  if (name == "john") {
+    resolve();
+  } else {
+    reject();
+  }
+});
