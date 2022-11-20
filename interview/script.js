@@ -204,11 +204,21 @@ function outerFunction2(inner) {
 }
 outerFunction2("outer2");
 //Asynchronous js.async and await
-const event = Promise((resolve, reject) => {
-  var name = "john";
+const event = new Promise((resolve, reject) => {
+  var name = "hon";
   if (name == "john") {
-    resolve();
+    resolve(name);
   } else {
-    reject();
+    reject("name was not john");
   }
 });
+event
+  .then((name) => {
+    console.log(name);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("promise ended");
+  });
