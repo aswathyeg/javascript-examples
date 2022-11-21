@@ -223,3 +223,26 @@ event
     console.log("promise ended");
   });
 //async and await
+const axios = require("axios");
+const fetchData = async () => {
+  //needed a function
+  try {
+    const data = await axios.get("https://cat-fact.heroskuapp.com/fact");
+    console.log(data.data);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    console.log("promise ended");
+  }
+};
+fetchData();
+//then method
+
+const data = axios.get("https://cat-fact.herokuapp.com/facts");
+data
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
