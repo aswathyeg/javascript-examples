@@ -214,12 +214,15 @@ const event = new Promise((resolve, reject) => {
 });
 event
   .then((name) => {
+    //resole will run
     console.log(name);
   })
   .catch((err) => {
+    //reject will run
     console.log(err);
   })
   .finally(() => {
+    //for every action
     console.log("promise ended");
   });
 //async and await
@@ -227,8 +230,8 @@ const axios = require("axios");
 const fetchData = async () => {
   //needed a function
   try {
-    const data = await axios.get("https://cat-fact.heroskuapp.com/fact");
-    console.log(data.data);
+    const data = await axios.get("https://cat-fact.herokuapp.com/facts");
+    console.log(data);
   } catch (err) {
     console.log(err);
   } finally {
