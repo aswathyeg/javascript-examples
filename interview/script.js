@@ -35,7 +35,7 @@ function fil() {
   var reduceArray = a.filter((c) => {
     return c > 2;
   });
-  console.log(reduceArray);
+  console.log("filter result" + reduceArray);
 }
 fil();
 
@@ -69,7 +69,7 @@ var fun = function () {
 fun();
 //arguments vs params
 function multiplys(num, num) {
-  console.log(num * num);
+  console.log("arguments vs params" + num * num);
 }
 var arr = [5, 5];
 multiplys(...arr);
@@ -78,11 +78,11 @@ const numberArr = [2, 5, 6, 3, 4];
 const mapResult = numberArr.map((arr) => {
   return arr * 2;
 });
-console.log(mapResult); //will result a new array. can append other array mathods like filter
+console.log("mapResult" + mapResult); //will result a new array. can append other array mathods like filter
 const forEachResult = numberArr.forEach((ar) => {
   return ar + 3;
 });
-console.log(forEachResult); //will not result a new array. cannot append other array mathods like filter
+console.log("forEachResult" + forEachResult); //will not result a new array. cannot append other array mathods like filter
 const forEachResult2 = numberArr.forEach((ar, i) => {
   numberArr[i] = ar + 3;
 });
