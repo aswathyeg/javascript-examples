@@ -214,7 +214,7 @@ const event = new Promise((resolve, reject) => {
 });
 event
   .then((name) => {
-    //resole will run
+    //resolve will run
     console.log(name);
   })
   .catch((err) => {
@@ -226,26 +226,26 @@ event
     console.log("promise ended");
   });
 //async and await
-const axios = require("axios");
-const fetchData = async () => {
-  //needed a function
-  try {
-    const data = await axios.get("https://cat-fact.herokuapp.com/facts");
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  } finally {
-    console.log("promise ended");
-  }
-};
-fetchData();
+// const axios = require("axios");
+// const fetchData = async () => {
+//needed a function
+// try {
+//const data = await axios.get("https://cat-fact.herokuapp.com/facts");
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   } finally {
+//     console.log("promise ended");
+//   }
+// };
+// fetchData();
 //then method
 
-const data = axios.get("https://cat-fact.herokuapp.com/facts");
-data
-  .then((res) => {
-    console.log(res.data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+//const data = axios.get("https://cat-fact.herokuapp.com/facts");
+// data
+//   .then((res) => {
+//     console.log(res.data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
