@@ -79,6 +79,7 @@ const mapResult = numberArr.map((arr) => {
   return arr * 2;
 });
 console.log("mapResult" + mapResult); //will result a new array. can append other array mathods like filter
+
 const forEachResult = numberArr.forEach((ar) => {
   return ar + 3;
 });
@@ -87,6 +88,7 @@ const forEachResult2 = numberArr.forEach((ar, i) => {
   numberArr[i] = ar + 3;
 });
 console.log(numberArr);
+
 //null vs undefined
 
 var y;
@@ -125,11 +127,10 @@ var person = {
 };
 //person.hello("world");
 var alterName = { name: "Aswathy" };
-person.hello.call(alterName, "world");
-person.hello.apply(alterName, ["world"]);
-var bindResult = person.hello.bind(alterName);
+person.hello.call(alterName, "world"); //passed argument as a string
+person.hello.apply(alterName, ["world"]); //passed argument as an array
+var bindResult = person.hello.bind(alterName); //first bind.then call
 bindResult("world");
-
 //infinite currying
 function add(a) {
   return function (b) {
