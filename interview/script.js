@@ -251,3 +251,12 @@ event
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+//spread oprator
+function calculate(x, y, z) {
+  return x + y + z;
+}
+const arrayToSum = [1, 2, 4];
+
+console.log("Sum of ArratToSum" + " " + calculate(...arrayToSum));
+console.log([...arrayToSum]);
