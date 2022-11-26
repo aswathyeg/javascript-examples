@@ -188,6 +188,7 @@ console.log(newNameList);
 function outerFunction() {
   let outerVariable = "outerVariable";
   function innerFunction() {
+    //closure is combination of function and the lexical environment
     console.log(outerVariable); //can access outerscope variable
   }
   return innerFunction();
