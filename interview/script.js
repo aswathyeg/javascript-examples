@@ -260,3 +260,4 @@ const arrayToSum = [1, 2, 4];
 
 console.log("Sum of ArratToSum" + " " + calculate(...arrayToSum));
 console.log([...arrayToSum]);
+console.log(...arrayToSum);
