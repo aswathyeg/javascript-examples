@@ -25,7 +25,7 @@ function mapping() {
   var multiply = a.map((prod) => {
     return prod * 5;
   });
-  console.log(multiply);
+  console.log(multiply); //return new array
 }
 mapping();
 
@@ -35,7 +35,7 @@ function fil() {
   var reduceArray = a.filter((c) => {
     return c > 2;
   });
-  console.log("filter result" + reduceArray);
+  console.log("filter result" + reduceArray); //return
 }
 fil();
 
@@ -181,7 +181,7 @@ console.log(people1);
 //filter
 let nameList = ["pedro", "asea", "pedro", "toto", "lulu"];
 const newNameList = nameList.filter((c) => {
-  return c !== "pedro";
+  return c !== "pedro"; //return an array which this condition is true
 });
 console.log(newNameList);
 //closures
@@ -259,5 +259,5 @@ function calculate(x, y, z) {
 const arrayToSum = [1, 2, 4];
 
 console.log("Sum of ArratToSum" + " " + calculate(...arrayToSum));
-console.log([...arrayToSum]);
+console.log("destructure array" + [...arrayToSum]);
 console.log(...arrayToSum);
