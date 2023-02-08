@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+//                 const textArea=[underscore_case,
+//  first_name,
+// Some_Variable ,
+//   calculate_AGE,
+// delayed_departure
+// ]
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
+//working with strings
+function capitalizeName(name){
+    const names = name.split(' ');
+    let upperCase = [];
+    for(const n of names){
+        upperCase.push(n[0].toUpperCase() +n.slice(1)) //slice(1) returns all letters from position 1 onwards
+    }
+    console.log(upperCase.join(' '));
+}
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
+//comparison
+const email= 'aswathyrh@gmail.com';
+const dummy='Aswathyrh@Gmail.com ';
+const compare= dummy.toLocaleLowerCase();
+const real=compare.trim();
+console.log(real);
+console.log(email===real);
+// const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r)
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+ const [i, , j] = nested;
+ console.log(i,j);
+
+ //mutating variables
+ let a= 111;
+ let b=999;
+ const obj={a:34,b:78,c:9};
+ ({a,b}=obj);
+ console.log (a,b); //34,78
+ 
+ // Object.keys/Object.values/Object.entries
+ const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: { //key of obj openingHours
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `We are open on ${properties.length} days:`;
+for (const days of properties){
+  openStr+=`${days},`;
+}
+
+ console.log (openStr);
+
+ //coding challange
+ const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+//1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+const gameProperties= Object.values(game.scored);
+console.log(gameProperties);
+
+
+for(const [i,scores] of game.scored.entries()){
+  console.log(`Goal ${i+1}:${scores}`);
+}
+//2.Use a loop to calculate the average odd and log it to the console 
+const oddsValues=Object.values(game.odds);
+console.log(oddsValues);
+let avgValue=0;
+for (const oddValues of oddsValues){
+  //console.log(oddValues);
+  let avgValue=oddValues/(oddsValues.length)
+ console.log(avgValue);
+}
+//3.Print the 3 odds to the console, but in a nice formatted way
+for(const odds of oddsValues){
+  console.log(`Odd of victory ${Object.values(game.team1)}:${odds}`);
+}
+//code challange
+const gameEvents = new Map([[
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution']
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]]);
+//1.Create an array 'events' of the different game events that happened (no duplicates)
+const events=new Set([...gameEvents.values()]);
+console.log(events);
+//2.Remove the yellow card from minute 64 from the game events log.
+console.log(gameEvents.delete(64));
+//3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+console.log(`An event happened,on average, every ${90/gameEvents.size} minutes`);
+//4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF] ${min}: ${event}`);
+}
+//functions
+function oneWord(str){
+  return str.replace(/ /g,'').toLowerCase();
+
+}
+function upperFirstWord(str){
+  const [first,...others]= str.split(' ');
+return [first.toUpperCase(),...others].join(' ');
+
+}
+function transformer (str,fn){
+  console.log(`original string:${str}`);
+  console.log(`transformed string:${fn(str)}`);
+  console.log(`transformed by :${fn.name}`);
+
+}
+transformer ('JavaScript is the best!',upperFirstWord);// upperFirstWord is the callback function
+//another eg for callback function
+function upperLastword (string){
+  const last =string.split(' ').pop();
+  return[ string.slice(0)+last.toUpperCase()].join(' ');//have to replace last word of string with 'last'
+
+}
+function transformers (str,fn){
+  console.log(`original string: ${str}`);
+  console.log(`tranformed string :${fn(str)}`);
+  console.log(`transformed by${fn.name}`);
+
+}
+transformers ('my name is aswathy',upperLastword);
+
+   //call and apply methods
+   const lufthansa={
+     airline:'Lufthansa',
+     iataCode:'LH',
+     bookings:[],
+
+     book(flightNum,name){
+       console.log(
+         `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`//using this keyword so that same object can be used at differnt places
+       );
+       this.bookings.push({flight:`${this.iataCode} ${flightNum} name`})
+     }
+   
+   
+   }
+   lufthansa.book(23,'John Smith');
+
+   const eurowings={
+    airline:'Eurowings',
+     iataCode:'EW',
+     bookings:[],
+     
+
+   }
+   const airIndia={
+    airline:'AirIndia',
+     iataCode:'AI',
+     bookings:[],
+     
+
+   }
+   //for reuse book method
+   const book=lufthansa.book;
+
+   book.call(lufthansa,24,'Mary');
+   book.call(eurowings,25,'Mathew');
+
+   //apply method
+   const forApply=[26,'Cooper'];
+
+   book.apply(lufthansa,forApply);  
+   book.call(lufthansa,...forApply);//call can be do like this as well
+  //bind method
+  const bookLH=book.bind(lufthansa);
+  const bookEW=book.bind(eurowings);
+  const bookAI=book.bind(airIndia);
+  bookLH(1,'Aswathy');
+  const bookLH2=book.bind(lufthansa,23);
+  bookLH2('John');
+
+  //challange
+
+  const poll={
+    question:'What is your favorate programming language?',
+    options:['0:JavaScript','1:Python','2:Rust','3:C++'],
+    answers:new Array(4).fill(0),//will generate[0,0,0,0]
+
+    registerNewAnswer (){
+      const answer=Number(prompt(`${this.question}\n${this.options.join('\n')}\n(write option number)`));
+      console.log(answer);
+//register answer
+typeof answer==='number' && answer<this.answers.length && this.answers[answer]++;
+console(this.answers)
+
+    }
+    
+  }
+  
+  // poll.registerNewAnswer();
+  // document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
+
+   //array destructuring
+   const numbers=[1,2,3];
+   [num1,num2]=numbers;
+   [a, ,c]=numbers;
+   console.log(a,c);
+   console.log(num1,num2);
+   //spread operator
+   const more=[...numbers,4];
+   console.log(more);
+
+
+   </script>
+        </body>
+    </head>
+</html>

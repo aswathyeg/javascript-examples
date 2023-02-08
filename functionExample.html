@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+              
+                const calcAverage=(score1,score2,score3)=>
+                   (score1+score2+score3)/3;
+                   console.log(calcAverage(1,2,3));
+            //         let averageScore=totalScore/3;
+                    
+                  
+
+                
+                const dolphinsScore=calcAverage(44,23,71);
+               const koalasScore=calcAverage(65,54,49);
+
+                function checkWinner(dolphinsScore,koalasScore){
+                    if (dolphinsScore>=koalasScore){
+                        console.log(`dolphins win(${dolphinsScore} vs ${koalasScore})`)
+
+                    }
+                    else {
+                        console.log(`koalas win(${koalasScore} vs ${dolphinsScore})`)
+
+                    }
+                    
+                }
+                checkWinner(576,111);
+            </script>
+        </body>
+    </head>
+</html>

@@ -1,2 +1,2 @@
 # JavaScript Examples
-A collection of JavaScript examples
+A collection of JavaScript examples 

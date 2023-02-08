@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        //reference types
+        const arr=[1,2,3];
+        const newArr=[4,5,6];
+        //REST and spread operator
+        const [oldArr,...oldSecond]=[...arr,...newArr];
+
+console.log(oldArr,oldSecond);
+
+const restorent={
+ openingHours:{
+    thu:{
+        open:10,
+        close:22
+
+    },
+    fri:{
+        open:20,
+        close:23
+
+    },
+    sat:{
+        open:0,
+        close:24
+
+    }
+}
+}
+//REST operator
+const{sat,...weekdays}=restorent.openingHours;
+console.log(weekdays);
+
+
+        const address = {
+            name: 'ash',
+            phone: 901
+        }
+        
+        console.log(address);
+
+        const newAddress = address;
+        newAddress.name = 'pinky';// will mutate address as well
+        console.log(newAddress);
+//object destructuring
+const{name,phone}=address;
+console.log(name,phone);
+
+const add=function(...numbers){
+    let sum=0;
+    for(i=0;i<numbers.length;i++)
+    {
+        sum+=numbers[i];
+    }
+    console.log(sum);
+}
+add(2,3);
+add(4,5,6);
+add(1,2,4,5);
+//Logical assignment operator
+const rest1={
+    name:'pizzavala',
+    numGuests:20
+}
+const rest2={
+    name:'pathavala',
+    bill:40
+}
+rest1.numGuests||=10;
+rest2.numGuests||=10;
+
+console.log(rest1);
+console.log(rest2);
+    </script>
+</body>
+
+</html>

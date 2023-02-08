@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+                const array=[1,2,3];
+                const a=array[0];
+                const b=array[1];
+                const c=array[2];
+                const [x,y,z]=array; // destructured (unpacking). should use const here
+                console.log(x,y,z); // 1 2 3 (unpacked from the array)
+                console.log(array); // [1,2,3] array remains of the same
+
+                const [first,third]=array;
+                console.log(first,third);
+                
+                const[one,,three]=array;
+                console.log(one,three);
+
+            </script>
+        </body>
+    </head>
+</html>
