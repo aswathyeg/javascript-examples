@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+                //let weeks=['Sun','mon','tues','wed','thurs','fri','saturday'];
+
+                function weekdayText(weekdays){
+
+                  return  function getText(number){
+                    if(Number(number)>weekdays.length||Number(number<0)){
+                        throw new Error('Invalid day numer')
+                    }
+                    let week=weekdays[Number(number)]
+                        return week;
+                        
+
+                    }
+                    
+                    
+                }
+                const day = weekdayText(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])("6");//IIFE
+console.log(day); // Saturday
+
+                
+                
+            </script>
+        </body>
+    </head>
+</html>
