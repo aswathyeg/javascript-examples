@@ -185,6 +185,7 @@ const newNameList = nameList.filter((c) => {
   return c !== "pedro"; //return an array which this condition is true
 });
 console.log(newNameList);
+
 //closures
 function outerFunction() {
   let outerVariable = "outerVariable";
