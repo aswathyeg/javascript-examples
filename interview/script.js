@@ -10,6 +10,7 @@ function test() {
   console.log(a);
 }
 test();
+
 // hoisting
 function abc() {
   console.log(a);
