@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+   
+<body>
+
+
+<script>
+//1.rotate array 
+//[5,1,2,3,4] [4,5,1,2,3] [3,4,5,1,2]
+let arr=[1,2,3,4,5];
+let n=3;
+function rotate(arrayValue,num){
+    for(let i=0;i<num;i++){
+    const lastItem=arrayValue.pop();//get last element
+    arrayValue.unshift(lastItem)//push to first position
+
+    console.log("result:"+arrayValue);
+}
+      
+}
+rotate(arr,n);
+//2.check given strings are equal
+ let str1="equal";
+ let str2="leqau";
+function check(val1,val2){
+   
+if (str1.split('').sort().join('')===str2.split('').sort().join(''))
+console.log("equal");
+else console.log("not equal");
+}
+check(str1,str2);
+
+//3.count repeated values
+let elements=["aaa","bbb","ccc","aaa","ccc","aaa","aaa"];
+let obj={};
+function checking(entered){
+ for(let i=0;i<elements.length;i++)   {
+
+    let item=elements[i];
+
+    if(obj[item]){//if item is present in obj
+        obj[item]=obj[item]+1
+
+    }
+    else{
+        obj[item]=1
+    }
+ }
+
+}
+checking(elements);
+console.log(obj)
+//ways to empty an array
+let names=[1,2,3];
+// names=[];
+names.splice(0,names.length)
+console.log(names);
+//bind
+function displayName(){
+    return "first is"+this.first+"last is"+this.last
+}
+let person={first:"aaa",
+last:"bbb"
+
+}
+let altername={first:"ccc"}
+let newName=displayName.bind(person)
+console.log(newName(altername))
+
+//currying
+function sum(a){
+    return(b)=>{
+        return(c)=>{
+            return (d)=>{
+                return a+b+c+d;
+            }
+        }
+    }
+}
+console.log(sum(1)(2)(3)(4));
+
+</script>
+</body>
+</html>
