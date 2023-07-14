@@ -43,7 +43,7 @@ fil();
 //reduce
 var num = [1, 2, 3, 4];
 var sum = num.reduce((acc, curr, i, arr) => {
-  return acc + curr;
+  return acc + curr; // returns sum of whole elements
 }, 0);
 console.log(sum);
 
